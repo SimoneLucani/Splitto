@@ -1,0 +1,1193 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --colore-principale: #c94f2d;
+    --colore-principale-hover: #a93e22;
+    --colore-bianco-hover: #e2e6ea;
+    --colore-sfondo: #f7f2e9;
+    --colore-blocco: #fffefc;
+    --colore-testo: #29231f;
+    --colore-testo2: #665c54;
+    --colore-errore: #c0392b;
+    --colore-successo: #2e7d5b;
+    --colore-bordo: #8a7767;
+    --colore-dettaglio: #f4b942;
+}
+
+/* ---------- BASE ---------- */
+
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+
+    background: linear-gradient(180deg, #faf6ee 0%, var(--colore-sfondo) 100%);
+    color: var(--colore-testo);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    letter-spacing: -0.02em;
+    font-size: 2.1rem;
+    font-weight: 650;
+}
+
+h2 {
+    color: var(--colore-testo2);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+header {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem;
+    text-align: center;
+    min-height: 125px;
+}
+
+footer {
+    color: var(--colore-testo2);
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.manuale{
+    color: var(--colore-testo2);
+}
+
+/* ---------- LOGO ---------- */
+
+.titoloLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ---------- CONTENITORI ---------- */
+.h1h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mainGruppi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.bloccoBianco {
+    padding: 2rem;
+    background-color: var(--colore-blocco);
+    border-radius: 0.7rem;
+    box-shadow: 0 8px 24px rgba(42, 30, 18, 0.08);
+}
+/*----------LOGIN---------*/
+#formLogin{
+    width: 28rem;
+}
+
+.passwordMostra {
+    position: relative;
+    width: 100%;
+}
+
+#inputPassword {
+    width: 100%;
+    padding-right: 6rem;
+}
+
+
+.invalido {
+    color: var(--colore-errore);
+}
+
+.valido {
+    color: var(--colore-successo);
+}
+
+.btnMostra {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: var(--colore-testo);
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.paginaLogin {
+    flex: 1;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    gap: 1.5rem;
+    padding: 2rem;
+
+    transform: translateY(-6%);
+}
+/* ---------- FORM ---------- */
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+.labelInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.labelInput label {
+    color: var(--colore-testo);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+
+    background-color: var(--colore-sfondo);
+    color: var(--colore-testo);
+
+    border: 1px solid var(--colore-bordo);
+    border-radius: 1rem;
+
+    font: inherit;
+    transition: border-color 0.2s ease, 
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+input:hover{
+    border-color: var(--colore-principale);
+}
+
+input:focus-visible {
+    outline: none;
+    border-color: var(--colore-principale) ;
+    box-shadow: 0 0 0 4px #c94f2d60
+}
+
+input:focus::placeholder {
+    opacity: 0.6;
+}
+
+.inputErrore {
+    background-color: #fde8e8;
+    border-color: var(--colore-errore);
+}
+
+.errore {
+    min-height: 1.2rem;
+    color: var(--colore-errore);
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* ---------- BOTTONI ---------- */
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.btnArancio,
+.btnBianco {
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    text-align: center;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.btnArancio {
+    background-color: var(--colore-principale);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(201, 79, 45, 0.25);
+}
+
+.btnArancio:hover {
+    background-color: var(--colore-principale-hover);
+    transform: translateY(-1px);
+}
+
+.btnArancio:active {
+    transform: translateY(1px);
+}
+
+
+.btnBianco {
+    background-color: var(--colore-blocco);
+    color: var(--colore-testo);
+    border: none;
+    box-shadow: 0 4px 12px rgba(29, 8, 3, 0.25);
+}
+
+.btnBianco:hover {
+    background-color: var(--colore-bianco-hover);
+    transform: translateY(-1px);
+}
+
+.btnBianco:active {
+    transform: translateY(1px);
+}
+
+.btnLink,
+.manuale {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
+    color: var(--colore-testo2);
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
+small{
+    font-size: 1.1rem;
+}
+.btnLink:hover,
+.manuale:hover {
+    color: var(--colore-principale-hover);
+}
+
+.btnLink:focus-visible,
+.manuale:focus-visible {
+    outline: 2px solid var(--colore-dettaglio);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.coppiaBottoni {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.coppiaBottoni button {
+    width: 15rem;
+}
+
+/* ---------- PAGINA GRUPPI ---------- */
+
+.intestazione {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--colore-blocco);
+    min-height: 6rem;
+}
+
+.btnEsci {
+    padding: 0.5rem 1rem;
+    background-color: var(--colore-errore);
+    color: white;
+    border: none;
+    border-radius: 0.7rem;
+
+    transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.1s ease;
+}
+
+.btnEsci:hover {
+    filter: brightness(0.85); /* più scuro all'hover*/
+    transform: translateY(-1px);
+}
+
+
+.btnEsci:active {
+    filter: brightness(0.75);
+    transform: translateY(1px);
+}
+
+.testoSemplice {
+    color: var(--colore-testo);
+}
+
+#info {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--colore-principale);
+    background-color: var(--colore-sfondo);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+    display: inline-block;
+}
+
+.spazio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+.bloccoLista{
+    flex: 1;
+    width: 95%;
+    max-width: 800px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0;
+    border-left: 4px solid var(--colore-principale);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titoloGruppo{
+    margin: 0 0 0.6rem 0;
+    font-size: 1.6rem;
+    font-weight: 630;
+}
+
+.bloccoLista:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(42, 30, 18, 0.12);
+}
+
+.bloccoLista:hover .freccia{
+    transform: scaleX(1.5) translateX(4px);
+    color: var(--colore-principale-hover);
+}
+
+
+.mainGruppi .coppiaBottoni{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+}
+
+.mainGruppi .coppiaBottoni button {
+    flex: 1;
+}
+
+.freccia {
+    display: inline-block;
+    font-family: "Arial", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--colore-principale);
+    cursor: pointer;
+    margin-left: 8px;
+    transform: scaleX(1.2);
+    transition: all 0.2s ease;
+    background-color: transparent;
+    border:none;
+
+}
+
+
+.badgePartecipanti {
+    display: inline-flex;
+    align-items: center;
+    width: -moz-fit-content; 
+    width: fit-content;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+}
+
+/* ---------- DIALOG ---------- */
+
+.sfondoDialog{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+.dialog label{
+    font-weight: 500;
+}
+
+
+.dialog input {
+    width: 100%;
+}
+
+.dialog .coppiaBottoni {
+    justify-content: flex-end;
+}
+
+.dialog h1{
+    font-size: 1.5rem;
+}
+
+#areaContenutoModale {
+    color: var(--colore-testo);
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 4rem;
+
+    transition: all 0.2s ease-in-out;
+}
+
+/*areaModale che in quel momento appartiene a questa classe*/
+#areaContenutoModale.stileMessaggio {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--colore-errore);
+}
+
+#areaContenutoModale.stileCodice {
+    margin-top: 3rem;
+    background-color: #f4f6f9;
+    border: 2px dashed var(--colore-bordo);
+    border-radius: 0.5rem;
+    padding: 1.3rem 2rem;
+    font-size: 1.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--colore-principale);
+    font-weight: bold;
+    width: 100%;
+    letter-spacing: 0.5rem;
+    text-indent: 0.5rem;
+}
+
+
+/* ---------- DASHBOARD DETTAGLIO ---------- */
+.intestazione .freccia:hover{
+    transform: scaleX(1.5) translateX(-4px);
+    color: var(--colore-principale-hover);
+}
+
+
+.trePuntini{
+    font-size: 2rem;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.iconcina{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.menuGruppo {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--colore-blocco);
+    border-radius: 0.7rem;
+    box-shadow: 0 0.5rem 3rem rgba(42, 30, 18, 0.12);
+    display: flex;
+    flex-direction: column;
+    min-width: 12rem;
+    padding: 0.5rem 0;
+    z-index: 10;
+}
+
+.itemMenu {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 0.8rem 1.2rem;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--colore-testo);
+    cursor: pointer;
+}
+
+.itemMenu:hover {
+    background-color: var(--colore-sfondo);
+}
+
+
+#spazioSezione h2{
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+
+#spazioSezioni {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
+    
+}
+
+#spazioSezioni .bloccoLista {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#spazioSezioni .bloccoLista {
+    border: none;
+}
+
+#btnAbbandonaGruppo{
+    color: var(--colore-errore);
+}
+
+#titoloModale{
+    text-align: center;
+}
+
+#areaContenutoModale{
+    display: flex;
+    flex-direction: column;
+}
+/* ---------- ANTEPRIME CARD ---------- */
+
+.infoGruppo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.infoGruppo>div {
+    color: var(--colore-testo2);
+    font-size: 0.95rem;
+}
+
+.listaAnteprima {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.itemAnteprima {
+    font-size: 0.95rem;
+    color: var(--colore-testo2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemAnteprima::before {
+    content: "•";
+    color: var(--colore-principale);
+    margin-right: 0.5rem;
+}
+
+.altriAnteprima {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--colore-principale);
+}
+
+.badgeSaldo {
+    display: inline-flex;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: 4rem;
+    background-color: var(--colore-sfondo);
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+#titoloNomeGruppo{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.etichetta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--colore-bordo);
+    margin-bottom: -0.3rem;
+}
+
+/*---------LISTA DELLA SPESA--------*/
+#formAggiungiArticolo{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/*uguale ai tre puntini*/
+#finto{
+    padding: 2rem;
+    font-size: 1rem;
+    color: transparent;
+}
+
+.messaggioInformativo1{
+    font-size: 1.5rem;
+    padding: 1.3rem;
+    color: var(--colore-testo2);
+    margin-top: 1.4rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.messaggioInformativo2 {
+    font-size: 1.2rem;
+    color: var(--colore-testo2);
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+}
+
+.coppiaMessaggi{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: #fffefc5d;
+    margin-top: 1rem;
+}
+
+
+#inputArticolo{
+    width: 24rem;
+}
+
+#spazioLista .bloccoLista{
+    border: none;
+}
+
+#spazioLista .bloccoBianco{
+    padding: 1.3rem; /*Più piccole*/
+}
+
+#spazioLista h2{
+    font-size: 1.3rem;
+    color: var(--colore-testo);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#spazioLista .testo{
+    font-size: 1.1rem;
+    color: var(--colore-testo2);
+    font-weight: 500;
+}
+
+.titoloOggetto{
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+    font-size: 1.5rem;
+}
+
+#spazioLista .infoGruppo{
+    gap: 0.4rem;
+}
+
+#dialogComprato .badgeSaldo{
+    align-self: center;
+    font-size: 1.1rem;
+}
+
+.itemPartecipante{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.itemPartecipante label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: var(--colore-testo);
+    cursor: pointer;
+    padding: 0.4rem 0;
+    justify-content: flex-start;
+
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.itemPartecipante label:active,
+.itemPartecipante label:hover {
+    background-color: #00000008;
+}
+
+input[type="checkbox"]{
+    accent-color: var(--colore-principale);
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+#etichettaSezione{
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+#partecipantiBottoni{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#areaErroreSpesa{
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#inputArticolo.inputErrore{
+    background-color: #fde8e8;
+    border-color: var(--colore-errore);
+}
+
+#erroreAggiungi{
+    font-size: 1.4rem;
+}
+
+#formErroreAggiungi{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+/*---------TUTTE LE SPESE--------*/
+
+#spazioListaSpese .bloccoLista{
+    border: none;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.riga{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.dueRighe{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+#spazioListaSpese .bloccoBianco{
+    padding: 1rem;
+}
+
+#spazioListaSpese .infoGruppo{
+    gap: 0;
+    width: 100%;
+}
+
+#spazioListaSpese h2 {
+    font-size: 1.3rem;
+    color: var(--colore-testo);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#spazioListaSpese .divPartecipanti .testo {
+    font-size: 1.5rem;
+    color: var(--colore-testo2);
+    font-weight: 500;
+    transform: translateX(-1.1rem);
+}
+
+#spazioListaSpese .infoGruppo .testo {
+    font-size: 1rem;
+    color: var(--colore-testo2);
+}
+
+#btnAggiungiSpesa{
+    width: 23rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.btnElimina{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    z-index: 10;
+    filter: grayscale(100%) opacity(50%);
+    transition: filter 0.2s ease;
+
+}
+
+.btnElimina:hover{
+    transform: translateY(-1px);
+    filter: grayscale(0%) opacity(100%);
+}
+
+.btnElimina:active {
+    transform: translateY(1px);
+}
+
+
+#spazioListaSpese .titoloOggetto{
+    font-size: 1.8rem;
+}
+
+#listaPartecipanti{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+#dialogP{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#dialogP .itemAnteprima{
+    font-size: 1.2rem;
+}
+
+#quantoTesta{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#spazioListaSpese .freccia{
+    font-size: 2.3rem;
+    margin: 0;
+}
+
+.prezzo {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--colore-principale);
+    margin: 0;
+}
+
+.divPrezzoFreccia{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    position: absolute;
+    right: 1.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.infoSotto {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* ---------- SALDI ---------- */
+
+#listaSaldiSistema {
+    width: 100%;
+    max-width: 800px;
+}
+
+#listaSaldiSistema .bloccoLista {
+    border: none;
+    cursor: default;
+}
+#spazioSaldiSistema .infoGruppo {
+    gap: 0;
+}
+
+#listaSaldiSistema h2 {
+    margin: 0
+}
+
+#listaSaldiSistema .testo {
+    font-size: 1.1rem;
+    color: var(--colore-testo2);
+    font-weight: 500;
+}
+
+#listaSaldiSistema .prezzo{
+    font-size: 1.9rem;
+}
+
+#listaSaldiSistema{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#listaSaldiSistema .titoloOggetto{
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+#sistemaConti{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#sistemaConti h2{
+    margin-top: 1rem;
+}
+
+#areaPagamentiConsigliati{
+    width: 95%;
+    align-items: center;
+}
+
+#areaPagamentiConsigliati .bloccoLista:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.frecciaPagamento {
+    display: inline-block;
+    color: var(--colore-testo);
+    font-family: "Arial", sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    transform: scaleX(1.5);
+}
+
+#listaSaldiSistema h2{
+    margin-top: 0.3rem;
+    color: var(--colore-testo);
+    font-weight: 600;
+}
+
+#areaPagamentiConsigliati .titoloOggetto{
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+#sistemaConti{
+    gap: 1rem;
+}
+
+#listaSaldiSistema .bloccoBianco{
+    transform: none;
+    box-shadow: 0 8px 24px rgba(42, 30, 18, 0.08);
+}
+
+/*-----------MANUALE-------------*/
+
+.corpoManuale {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 2rem;
+}
+
+/*-----------INDICE DI NAVIGAZIONE-------------*/
+
+.navManuale {
+    flex: 0 0 220px;
+    position: sticky;
+    top: 2rem;
+
+    background-color: var(--colore-blocco);
+    border-radius: 0.9rem;
+    padding: 1.5rem 1.3rem;
+    box-shadow: 0 8px 24px rgba(42, 30, 18, 0.08);
+}
+
+.etichettaNav {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--colore-bordo);
+    margin-bottom: 1rem;
+}
+
+.listaNav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.listaNav > li {
+    margin-bottom: 0.3rem;
+}
+
+.listaNav a {
+    display: block;
+    text-decoration: none;
+    color: var(--colore-testo2);
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    border-left: 3px solid transparent;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.listaNav a:hover {
+    color: var(--colore-principale);
+    background-color: var(--colore-sfondo);
+    border-left-color: var(--colore-dettaglio);
+    transform: translateX(2px);
+}
+
+.listaNav a:focus-visible {
+    outline: 2px solid var(--colore-dettaglio);
+    outline-offset: 2px;
+}
+
+.listaNav .listaNav {
+    margin: 0.2rem 0 0.6rem 0.6rem;
+    padding-left: 0.6rem;
+    border-left: 2px solid var(--colore-sfondo);
+}
+
+.listaNav .listaNav a {
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+}
+
+/*-----------CONTENUTO MANUALE-------------*/
+
+.manualeUtente {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    background-color: var(--colore-blocco);
+    border-radius: 0.9rem;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 24px rgba(42, 30, 18, 0.08);
+
+    color: var(--colore-testo2);
+    line-height: 1.6;
+}
+
+.manualeUtente h2 {
+    color: var(--colore-principale);
+    border-bottom: 2px solid var(--colore-sfondo);
+    padding-bottom: 0.6rem;
+    margin-top: 3rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    scroll-margin-top: 2rem; 
+}
+
+.manualeUtente h2:first-of-type {
+    margin-top: 0;
+}
+
+.manualeUtente h3 {
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--colore-testo);
+    scroll-margin-top: 2rem;
+}
+
+/* ---------- UTILITÀ ---------- */
+
+.nascosto {
+    display: none;
+}

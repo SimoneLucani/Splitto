@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitto - Manuale Utente</title>
+    <link rel="icon" type="image/png" href="../img/logo.png"> <!--per icona sito alto sx-->
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="intestazione">
+        <button id="btnIndietroManuale" class="freccia">←</button>
+        <h1 id="titoloNomeGruppo">Manuale Utente</h1>
+        <div id="finto"></div>
+    </header>
+
+    <div class="corpoManuale">
+        <nav class="navManuale">
+            <span class="etichettaNav">Indice</span>
+            <ul class="listaNav">
+                <li><a href="#introduzione">Introduzione</a></li>
+                <li>
+                    <a href="#funzionamento">Come funziona</a>
+                    <ul class="listaNav">
+                        <li><a href="#login">Login</a></li>
+                        <li><a href="#sceltaGruppo">Scelta del gruppo</a></li>
+                        <li><a href="#gruppi">Gruppi</a></li>
+                        <li><a href="#listaSpesa">Lista della spesa</a></li>
+                        <li><a href="#uscite">Uscite</a></li>
+                        <li><a href="#saldi">Saldi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#test">Casi di test</a></li>
+            </ul>
+        </nav>
+        
+        <main class="manualeUtente">
+            <h2 id="introduzione">Introduzione</h2>
+            Splitto nasce dalla mia esperienza come studente fuori sede e ha l'obiettivo di semplificare la gestione delle spese
+            condivise tra coinquilini, riducendo discussioni e rendendo più semplice la divisione dei costi
+    
+            <h2 id="funzionamento">Come funziona</h2>
+    
+            <h3 id="login">Login</h3>
+            All'apertura del sito viene visualizzata una finestra di login, dove è possibile inserire email e password per accedere al proprio account. Se non si ha un account è possibile registrarsi, inserendo Nome (prima lettera maiuscola), email e password.
+    
+            <h3 id="sceltaGruppo">Scelta del gruppo</h3>
+            Dopo il login l'utente visualizza la lista dei gruppi a cui appartiene. In alto a destra è presente un bottone per effettuare il logout, mentre in alto a sinistra è possibile visualizzare il proprio nome per essere sicuri di aver utilizzato l'account desiderato.
+            Sono presenti inoltre due bottoni. Uno per unirsi a un gruppo già creato da un altro utente, inserendo il codice univoco di 6 caratteri che ci ha fornito. L'altro per creare un gruppo. Alla creazione viene aperta la dashboard del gruppo appena creato e viene visualizzato a schermo il codice del gruppo con la possibilità di copiarlo e condividerlo.
+            Cliccando su uno dei gruppi della lista, entriamo nella sezione dedicata a quello specifico gruppo.
+    
+            <h3 id="gruppi">Gruppi</h3>
+            Vengono visualizzate tre sezioni. Ognuna permette di accedere ad una diversa funzionalità del gruppo. In ognuna è presente un'anteprima di ciò che contengono. 
+            In alto a destra è presente un menu di opzioni, che permette di visualizzare il codice di invito del gruppo in un momento diverso dalla creazione, e di abbandonare il gruppo, azione permessa solo se il saldo dell'utente è 0.
+        
+            <h3 id="listaSpesa">Lista della spesa</h3>
+            Cliccando sulla prima card: "Lista della spesa", si visualizza una lista di oggetti da comprare, inseriti dagli utenti del gruppo tramite il campo di input nella pagina.
+            Chi effettua la spesa può cliccare sulla card dell'articolo comprato, e inserire quanto ha speso e per quali utenti dividere la spesa.
+            Pensata per la gestione efficace di piccole spese, per esempio in una casa di studenti dove le spese alimentari personali non sono condivise ma oggetti come olio, sale invece sì. 
+    
+            <h3 id="uscite">Uscite</h3>
+            Selezionando la seconda card: "Uscite", possiamo visualizzare tutti i pagamenti effettuati, sia quelli inseriti tramite la lista della spesa, che quelli inseriti tramite il bottone "Aggiungi pagamento" in questa sezione.
+            Pensato per spese extra, come bollette o spese di molti articoli.
+            Chi ha effettuato l'acquisto può eliminarla cliccando sul cestino nella card.
+            Cliccando su una spesa, è possibile vedere per quali utenti è stata divisa, permettendo quindi ad altri utenti di controllare che non gli vengano segnati costi sbagliati.
+    
+            <h3 id="saldi">Saldi</h3>
+            La sezione "Saldi", permette di visualizzare la situazione del gruppo, quanto ciascun utente deve ricevere o restituire.
+            Sotto viene consigliato come pareggiare i conti nel minor numero possibile di transazioni.
+            In questo modo un utente può restituire i soldi ad un altro, segnandolo poi come spesa nella sezione "Uscite" e pareggiando quindi il debito.
+    
+            <h2 id="test">Casi di Test</h2>
+            Nel sistema sono già inseriti tre utenti: Sara, Luca e Ugo. E' possibile accedere ai tre account inserendo email: nome@email.com e pwd: Nome2026? (Es. ugo@email.com e Ugo2026?).
+            Tutti e tre appartengono ad un gruppo di coinquilini, mentre Sara e Luca ad un gruppo vacanze.
+            Sono già presenti alcune spese e alcuni oggetti nella lista della spesa.
+        </main>
+    </div>
+
+
+
+    <script>
+        const btnIndietroManuale = document.getElementById("btnIndietroManuale");
+
+        btnIndietroManuale.addEventListener("click",(event)=>{
+            event.preventDefault();
+
+            window.location.href = "../index.html";
+        });
+    </script>
+</body>
+</html>

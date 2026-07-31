@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitto - Lista della spesa</title>
+    <link rel="icon" type="image/png" href="../img/logo.png"> <!--per icona sito alto sx-->
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="intestazione">
+        <button id="btnIndietroLista" class="freccia">←</button>
+        <h1 id="titoloNomeGruppo">Lista della spesa</h1>
+        <div id="finto"></div>
+    </header>
+
+    <main class="mainGruppi">
+        <div class="h1h2">
+            <h1>Lista della spesa</h1>
+            <h2>Aggiungi un articolo oppure seleziona quello acquistato</h2>
+        </div>
+
+        <div id="formErroreAggiungi">
+            <form id="formAggiungiArticolo" action="../php/aggiungi_articolo.php" novalidate>
+                <input type="text" name="input_articolo" id="inputArticolo" required placeholder="Nome dell'articolo">
+                <button type="submit" id="btnAggiungiArticolo" class="btnArancio">Aggiungi</button>
+            </form>
+            <div id="erroreAggiungi" class="errore nascosto">Inserisci il nome dell'articolo</div>
+        </div>
+        
+        <div id="spazioLista" class="spazio"></div>
+    </main>
+
+    <div id="dialogComprato" class="sfondoDialog nascosto">
+        <div class="dialog">
+            <h1 id="titoloModale">Aggiungi acquisto</h1>
+            <h2 id="nomeArticoloSelezionato" class="badgeSaldo" >nome</h2>
+
+            <form  method="post" id="formComprato" novalidate>
+
+                <div class="labelInput">
+                    <label for="inputPrezzo">Costo</label>
+                    <input type="number" id="inputPrezzo" name="prezzo" step="0.01" placeholder="Es. 6.50" required>
+                </div>
+
+                <div id="partecipantiBottoni">
+                    <div id="spazioMembri">
+                        <label id="etichettaSezione">Seleziona chi partecipa </label>
+                        <ul id="listaMembri" class="listaPartecipanti"></ul>
+                    </div>
+                    <div id="areaErroreSpesa" class="errore nascosto"></div>
+                    <div class="coppiaBottoni">
+                       <button type="button" id="btnAnnullaModale" class="btnBianco">Annulla</button>
+                        <button type="submit" id="btnConfermaModale" class="btnArancio">Conferma</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script src="../js/common.js"></script>
+<script src="../js/lista_spesa.js"></script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitto - Login </title>
+    <link rel="icon" type="image/png" href="img/logo.png"> <!--per icona sito alto sx-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="paginaLogin">
+        <header>
+            <div class="h1h2">
+                <div class="titoloLogo">
+                    <h1>Splitto</h1>
+                    <img  src="img/logo.png" alt="logo" class="logo">
+                </div>
+                <h2>Gestisci le spese in modo semplice</h2>
+            </div>
+        </header>
+    
+        <main>
+            
+            <form method="post" id="formLogin" class="bloccoBianco" novalidate>
+    
+                <div class="labelInput nascosto" id="labelInputNome">
+                    <label for="inputNome">Nome</label>
+                    <input type="text"  id="inputNome" name="nome" placeholder="Luca" pattern="^[A-Z][a-z]+$">
+                </div>
+    
+                <div class="labelInput">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" required id="inputEmail" name="email" placeholder="esempio@email.it">
+                </div>
+    
+                <div id="pwdRequisiti">
+                    <div class="labelInput">
+                        <label for="inputPassword">Password</label>
+                        <div class="passwordMostra">
+                            <input type="password" required id="inputPassword"  name="password" placeholder="•••••••••" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}">
+                            <button class="btnMostra" id="btnMostra" type="button">Mostra</button>
+                        </div>
+                    </div>
+                    
+                    <ul id="listaRequisiti" class="nascosto">
+                        <li id="reqLunghezza" class="invalido">Almeno 8 caratteri</li>
+                        <li id="reqMaiuscola" class="invalido">Almeno una lettera maiuscola</li>
+                        <li id="reqNumero" class="invalido">Almeno un numero</li>
+                        <li id="reqSpeciale" class="invalido">Almeno un carattere speciale</li>
+                    </ul>
+                </div>
+                    
+                
+                <div id="areaErrore" class="errore nascosto"></div>
+    
+                <button type="submit" id="btnAccedi" class="btnArancio">Accedi</button>
+                
+                
+                <button id="linkRegistrati" class="btnLink">Non hai un account? Registrati</button>
+                
+            </form>
+        </main>
+
+        
+        
+    </div>
+    <footer>
+        <small>
+            Progetto finale del corso di Progettazione Web | Lucani Simone | Luglio 2026
+        </small>
+        <small>
+            <a class="manuale" href="html/manuale.html">Manuale utente</a>
+        </small>
+    </footer>
+    
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

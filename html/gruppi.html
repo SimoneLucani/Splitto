@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitto - I tuoi gruppi</title>
+    <link rel="icon" type="image/png" href="../img/logo.png"> <!--per icona sito alto sx-->
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="intestazione">
+        <div id="info"></div>
+        <button id="btnEsci" class="btnEsci">Esci</button>
+    </header>
+
+    <main class="mainGruppi">
+        <div class="h1h2">
+            <h1>I tuoi gruppi</h1>
+            <h2>Seleziona un gruppo</h2>
+        </div>
+
+        <div id="spazioGruppi" class="spazio"></div>
+
+        <div class="coppiaBottoni">
+            <button id="btnUnisciti" class="btnBianco">Unisciti</button>
+            <button id="btnCrea" class="btnArancio">Crea gruppo</button>
+        </div>
+
+        <div id="dialogCreaGruppo" class="sfondoDialog nascosto">
+            <div class="dialog">
+                <h1>Nuovo gruppo</h1>
+                <form action="php/crea_gruppo.php" id="formCreaGruppo" method="post" novalidate>
+                    <div class="labelInput">
+                        <label for="inputNomeGruppo">Nome del gruppo</label>
+                        <input type="text" id="inputNomeGruppo" required name="nomeGruppo" placeholder="es. Coinquilini Pisa">
+                    </div>
+                    <div id="areaErroreCrea" class="errore nascosto"></div>
+                    <div class="coppiaBottoni">
+                        <button type="button" id="btnAnnullaCreazione" class="btnBianco">Annulla</button>
+                        <button type="submit" id="btnConfermaCreazione" class="btnArancio">Crea gruppo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="dialogUniscitiGruppo" class="sfondoDialog nascosto">
+            <div class="dialog">
+                <form action="php/unisciti_gruppo.php" id="formUniscitiGruppo" method="post" novalidate>
+                    <h1>Nuovo gruppo</h1>
+                    <div class="labelInput">
+                        <label for="inputCodiceGruppo">Codice del gruppo</label>
+                        <input type="text" id="inputCodiceGruppo" required name="codiceGruppo" placeholder="6 caratteri maiuscoli" pattern="^[A-Z0-9]{6}$" maxlength="6" >
+                    </div>
+                    <div id="areaErroreUnisciti" class="errore nascosto"></div>
+                    <div class="coppiaBottoni">
+                        <button type="button" id="btnAnnullaUnione" class="btnBianco">Annulla</button>
+                        <button type="submit" id="btnConfermaUnione" class="btnArancio">Unisciti</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../js/common.js"></script>
+    <script src = "../js/gruppi.js" ></script>
+</body>
+</html>

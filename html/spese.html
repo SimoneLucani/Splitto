@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spese</title>
+    <link rel="icon" type="image/png" href="../img/logo.png"> <!--per icona sito alto sx-->
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="intestazione">
+        <button id="btnIndietroLista" class="freccia">←</button>
+        <h1 id="titoloNomeGruppo">Lista della spesa</h1>
+        <div id="finto"></div>
+    </header>
+    
+    <main class="mainGruppi">
+        <div class="h1h2">
+            <h1>Spese del gruppo</h1>
+            <h2>Controlla le spese o inseriscine una</h2>
+        </div>
+    
+        <button type="button" id="btnAggiungiSpesa" class="btnArancio"> + Aggiungi pagamento</button>
+          
+        <div class="sfondoDialog nascosto"  id="dialogPartecipanti">
+            <div class="dialog" id="dialogP">
+                <div>
+                    <h1>Divisione della spesa</h1>
+                    <h2 id="quantoTesta">A testa</h2>
+                </div>
+                <ul id="listaPartecipanti"></ul>
+                <button id="btnChiudiDettaglio" class="btnBianco">Chiudi</button>
+            </div>
+        </div>
+    
+        <div id="spazioListaSpese" class="spazio"></div>
+
+        <div id="dialogEliminazione" class="sfondoDialog nascosto">
+            <div class="dialog">
+                <h1>Elimina spesa</h1>
+                <div id="msgConferma" class="stileMessaggio">Sei sicuro di voler eliminare la spesa?</div>
+                <div class="coppiaBottoni">
+                    <button type="button" id="btnAnnullaEliminazione" class="btnBianco">Annulla</button>
+                    <button type="submit" id="btnConfermaEliminazione" class="btnArancio">Elimina</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- dialog aggiunta spesa-->
+    <div id="dialogSpesa" class="sfondoDialog nascosto">
+        <div class="dialog">
+            <h1 id="titoloModale">Aggiungi pagamento</h1>
+    
+            <form method="post" id="formSpesa" novalidate>
+
+                <div class="labelInput">
+                    <label for="inputNome">Articolo</label>
+                    <input type="text" id="inputNome" name="nome" placeholder="Es. Acqua" required>
+                </div>
+    
+                <div class="labelInput">
+                    <label for="inputPrezzo">Costo</label>
+                    <input type="number" id="inputPrezzo" name="prezzo" step="0.01" placeholder="Es. 6.50" required>
+                </div>
+    
+                <div id="partecipantiBottoni">
+                    <div id="spazioMembri">
+                        <label id="etichettaSezione">Seleziona chi partecipa </label>
+                        <ul id="listaMembri" class="listaPartecipanti"></ul>
+                    </div>
+                    <div id="areaErroreSpesa" class="errore nascosto"></div>
+                    <div class="coppiaBottoni">
+                        <button type="button" id="btnAnnullaModale" class="btnBianco">Annulla</button>
+                        <button type="submit" id="btnConfermaModale" class="btnArancio">Conferma</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/spese.js"></script>
+    
+</body>
+</html>

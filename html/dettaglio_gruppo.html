@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitto - Dettaglio gruppo</title>
+    <link rel="icon" type="image/png" href="../img/logo.png"> <!--per icona sito alto sx-->
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="intestazione">
+        <button id="btnIndietro" class="freccia">←</button>
+        <h1 id="titoloNomeGruppo">Titolo</h1>
+        <div id="trePuntini" class="trePuntini">⋮
+            <div id="menuGruppo" class="menuGruppo nascosto">
+                <button class="itemMenu" id="btnCodiceInvito">Mostra codice invito</button>
+                <button class="itemMenu" id="btnAbbandonaGruppo">Abbandona gruppo</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="mainGruppi">
+        <div class="h1h2">
+            <h1>Dashboard del gruppo</h1>
+            <h2>Seleziona una sezione</h2>
+        </div>
+        <div id="spazioSezioni" class="spazio">
+    
+            <div class="bloccoLista bloccoBianco" id="bloccoListaSpesa">
+                <div class="infoGruppo">
+                    <h3 class="titoloGruppo">
+                        <img class="iconcina" src="../img/check-list.png" alt="Icona Lista">
+                        Lista della spesa
+                    </h3>
+                    <div class="etichetta">Da comprare: </div>
+                    <div id="areaAnteprimaLista"></div>
+                </div>
+                <span class="freccia">→</span>
+            </div>
+    
+            <div class="bloccoLista bloccoBianco" id="bloccoSpese">
+                <div class="infoGruppo">
+                    <h3 class="titoloGruppo">
+                        <img class="iconcina" src="../img/spending.png" alt="Icona Spese">
+                        Uscite
+                    </h3>
+                    <div class="etichetta">Ultimi acquisti: </div>
+                    <div id="areaAnteprimaSpese"></div>
+                </div>
+                <span class="freccia">→</span>
+            </div>
+    
+            <div class="bloccoLista bloccoBianco" id="bloccoSaldi">
+                <div class="infoGruppo">
+                    <h3 class="titoloGruppo"> 
+                        <img class="iconcina" src="../img/budget.png" alt="Icona Saldi">
+                        Saldi</h3>
+                    <div class="etichetta">Il tuo saldo: </div>
+                    <div id="areaAnteprimaSaldi"></div>
+                </div>
+                <span class="freccia">→</span>
+            </div>
+    
+        </div>
+
+
+        <div id="dialogDettaglio" class="sfondoDialog nascosto">
+            <div class="dialog">
+                <h1 id="titoloModale">titolo</h1>
+                <div id="areaContenutoModale"></div>
+                <div class="coppiaBottoni">
+                    <button type="button" id="btnAnnullaModale" class="btnBianco">Annulla</button>
+                    <button type="submit" id="btnConfermaModale" class="btnArancio"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/dettaglio_gruppo.js"></script>
+
+</body>
+</html>
