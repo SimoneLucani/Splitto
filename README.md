@@ -23,3 +23,4 @@ The database is already populated with three test users belonging to a "Roommate
 * `sara@email.com` / `Sara2026?`
 * `luca@email.com` / `Luca2026?`
 * `ugo@email.com` / `Ugo2026?`
+
